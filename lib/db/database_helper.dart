@@ -56,35 +56,8 @@ class DatabaseHelper {
     return await db.delete('todos', where: 'id = ?', whereArgs: [id]);
   }
 
-  //   Future<List<CategoryModel>> getAllCategories() async {
-  //   final db = await instance.database;
-  //   final result = await db.query('orders', orderBy: 'id DESC');
-
-  //   return result.map((e) => CategoryModel.fromLocalMap(e)).toList();
+  // Future close() async {
+  //   var db = await database;
+  //   db.close();
   // }
-
-  // Future<int> insertCategory(CategoryLocalModel order) async {
-  //   final db = await instance.database;
-  //   int id = await db.insert(tableCategories, order.toMapForLocal());
-  //   return id;
-  // }
-
-  //   Future<int> updateCategory(CategoryModel categories) async {
-  //   final db = await instance.database;
-  //   return await db.update(tableCategories, categories.toMap(),
-  //       where: 'id = ?', whereArgs: [categories.id]);
-  // }
-
-  // // delete category
-  // Future<int> deleteCategoryById(int id) async {
-  //   final db = await instance.database;
-  //   return await db.delete(tableCategories, where: 'id = ?', whereArgs: [id]);
-  // }
-
-  // get all data category
-  Future<List<CategoryModel>> getAllCategories() async {
-    final db = await database;
-    final result = await db.query('todos');
-    return result.map((e) => CategoryModel.fromLocalMap(e)).toList();
-  }
 }

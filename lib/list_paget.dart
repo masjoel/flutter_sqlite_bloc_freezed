@@ -31,18 +31,18 @@ class _ListPageState extends State<ListPage> {
           builder: (context, state) {
             return state.maybeWhen(orElse: () {
               return const Center(
-                child: Text('No data'),
+                child: CircularProgressIndicator(),
               );
             }, loading: () {
               return const Center(
-                child: Text('data loading'),
+                child: CircularProgressIndicator(),
               );
             }, loaded: (data) {
-              if (data.isEmpty) {
-                return const Center(
-                  child: Text('No data'),
-                );
-              }
+              // if (data.isEmpty) {
+              //   return const Center(
+              //     child: Text('Belum ada data'),
+              //   );
+              // }
               return Column(
                 children: [
                   Flexible(
